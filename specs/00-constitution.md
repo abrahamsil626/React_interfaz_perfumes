@@ -14,8 +14,9 @@ Fuentes self-hosted vía `@fontsource` (sustitutas libres documentadas en el DES
 2. **Sin divergencias**: no se añaden componentes, colores ni radios fuera de la spec 01.
 3. **Tipado estricto**: sin `any`; datos del dominio tipados en `src/types`.
 4. **Una fuente de verdad**: tokens en `src/styles/index.css`; datos en `src/data`; estado en `src/context`.
-5. **Accesibilidad mínima**: HTML semántico, `aria-label` en botones de icono, foco visible, objetivos táctiles ≥ 44px.
-6. **Verificable**: `npm run typecheck`, `npm test` y `npm run build` deben pasar antes de dar algo por hecho.
+5. **Idioma**: toda la interfaz visible (textos, etiquetas, mensajes, `aria-label`, fechas) está en **español**. Se conservan en su idioma original los nombres propios (marca, nombres de perfumes) y los términos de perfumería (`Extrait de Parfum`, `Eau de Parfum`).
+6. **Accesibilidad mínima**: HTML semántico, `aria-label` en botones de icono, foco visible, objetivos táctiles ≥ 44px.
+7. **Verificable**: `npm run typecheck`, `npm test` y `npm run build` deben pasar antes de dar algo por hecho.
 
 ## Estructura
 ```

@@ -24,9 +24,9 @@
 
 ## Layout
 - **AC-NAV-1** Todas las páginas comparten `Layout` con `Header` y `Footer`, **excepto** `/checkout` y `/login`, que usan cabecera mínima (flecha de regreso + wordmark), como en los mockups.
-- **AC-NAV-2** `Header`: izquierda `MENU` (abre panel con enlaces a todas las secciones), centro wordmark `MENTI PARFUM`, derecha iconos Buscar, Favoritos, Cuenta y Bolsa con contador.
+- **AC-NAV-2** `Header`: izquierda `Menú` (abre panel con enlaces a todas las secciones), centro wordmark `MENTI PARFUM`, derecha iconos Buscar, Favoritos, Cuenta y Bolsa con contador.
 - **AC-NAV-3** El contador de la bolsa refleja la cantidad total de unidades; el icono de favoritos enlaza a `/favorites`; cuenta enlaza a `/account` (o `/login` si no hay sesión).
-- **AC-NAV-4** `Footer` con 4 columnas de enlaces reales (Archive → `/collection`, Client Service → `/contact`, FAQ, Legal, Atelier → `/contact`, etc.) y wordmark centrado.
+- **AC-NAV-4** `Footer` con 4 columnas de enlaces reales (Archivo → `/collection`, Atención al cliente → `/contact`, Preguntas frecuentes, Legal, Atelier → `/contact`, etc.) y wordmark centrado.
 - **AC-NAV-5** Ruta desconocida → página 404 mínima con enlace a Home.
 - **AC-NAV-6** Al cambiar de ruta se hace scroll al inicio.
 - **AC-NAV-7** Todos los enlaces internos apuntan a una ruta existente (verificado por prueba).

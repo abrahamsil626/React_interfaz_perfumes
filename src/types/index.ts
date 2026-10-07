@@ -66,7 +66,7 @@ export interface Boutique {
 
 export interface FaqItem {
   id: string
-  category: 'Shipping' | 'Returns' | 'Authenticity' | 'Payment' | 'Care'
+  category: 'Envíos' | 'Devoluciones' | 'Autenticidad' | 'Pago' | 'Cuidado'
   question: string
   answer: string
 }

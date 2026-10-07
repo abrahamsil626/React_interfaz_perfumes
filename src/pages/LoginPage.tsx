@@ -20,8 +20,8 @@ export default function LoginPage() {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault()
     const next: typeof errors = {}
-    if (!isEmail(email)) next.email = 'Enter a valid email'
-    if (password.length < 6) next.password = 'Minimum 6 characters'
+    if (!isEmail(email)) next.email = 'Introduce un correo válido'
+    if (password.length < 6) next.password = 'Mínimo 6 caracteres'
     setErrors(next)
     if (Object.keys(next).length === 0) {
       signIn(email)
@@ -37,23 +37,23 @@ export default function LoginPage() {
   return (
     <div className="grid min-h-[calc(100vh-56px)] md:grid-cols-2">
       <div className="relative hidden border-r border-hairline md:block">
-        <img src="/images/products/obsidian-cuts.jpg" alt="Obsidian flacon" className="absolute inset-0 size-full object-cover" />
+        <img src="/images/products/obsidian-cuts.jpg" alt="Frasco de obsidiana" className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-x-8 bottom-8 border-t border-hairline-strong pt-4">
-          <Eyebrow className="text-ink">Archive lot no. 049 // Obsidia Noir</Eyebrow>
-          <p className="mt-2 font-text text-[18px] italic text-body">Volcanic obsidian crystal flacon, chilled extraction of smoked cade wood and mineral birch tar.</p>
+          <Eyebrow className="text-ink">Lote de archivo n.º 049 {'//'} Obsidia Noir</Eyebrow>
+          <p className="mt-2 font-text text-[18px] italic text-body">Frasco de cristal de obsidiana volcánica, extracción enfriada de madera de cade ahumada y alquitrán mineral de abedul.</p>
         </div>
       </div>
 
       <div className="flex items-center px-6 py-16 md:px-20">
         <div className="w-full max-w-md">
-          <Eyebrow className="mb-4">Connoisseur account</Eyebrow>
-          <Heading as="h1" size="lg">Enter the Sanctuary</Heading>
+          <Eyebrow className="mb-4">Cuenta de conocedor</Eyebrow>
+          <Heading as="h1" size="lg">Entra al santuario</Heading>
           <p className="mt-4 font-text text-[18px] italic text-body">
-            Access exclusive private decants, archival reserve and bespoke courier dispatch.
+            Accede a decants privados exclusivos, reservas del archivo y envío a medida por mensajería diplomática.
           </p>
 
-          <div role="tablist" aria-label="Account" className="mt-10 flex gap-8 border-b border-hairline">
-            {([['signin', 'Sign in'], ['register', 'Create account']] as const).map(([id, label]) => (
+          <div role="tablist" aria-label="Cuenta" className="mt-10 flex gap-8 border-b border-hairline">
+            {([['signin', 'Iniciar sesión'], ['register', 'Crear cuenta']] as const).map(([id, label]) => (
               <button
                 key={id}
                 role="tab"
@@ -70,20 +70,20 @@ export default function LoginPage() {
           </div>
 
           <form onSubmit={onSubmit} noValidate className="mt-8 space-y-6">
-            <Input label="Email address" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} error={errors.email} />
-            <Input label="Password" type="password" autoComplete={tab === 'signin' ? 'current-password' : 'new-password'} value={password} onChange={(e) => setPassword(e.target.value)} error={errors.password} />
-            <Button type="submit" full>{tab === 'signin' ? 'Enter archive' : 'Create account'}</Button>
+            <Input label="Correo electrónico" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} error={errors.email} />
+            <Input label="Contraseña" type="password" autoComplete={tab === 'signin' ? 'current-password' : 'new-password'} value={password} onChange={(e) => setPassword(e.target.value)} error={errors.password} />
+            <Button type="submit" full>{tab === 'signin' ? 'Entrar al archivo' : 'Crear cuenta'}</Button>
           </form>
 
           <div className="my-6 flex items-center gap-4 font-mono text-[11px] uppercase tracking-[2px] text-muted">
-            <span className="h-px flex-1 bg-hairline" /> or <span className="h-px flex-1 bg-hairline" />
+            <span className="h-px flex-1 bg-hairline" /> o <span className="h-px flex-1 bg-hairline" />
           </div>
 
           <Button full variant="outline" onClick={google}>
-            <GoogleIcon size={18} /> Continue with Google
+            <GoogleIcon size={18} /> Continuar con Google
           </Button>
           <p className="mt-6 font-text text-[14px] italic text-muted-soft">
-            By entering you accept our terms and privacy policy.
+            Al entrar aceptas nuestros términos y la política de privacidad.
           </p>
         </div>
       </div>

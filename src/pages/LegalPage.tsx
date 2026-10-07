@@ -11,11 +11,11 @@ export default function LegalPage() {
 
   return (
     <Section label="Legal">
-      <Eyebrow className="mb-4">Legal &amp; compliance</Eyebrow>
+      <Eyebrow className="mb-4">Legal y cumplimiento</Eyebrow>
       <Heading as="h1" size="xl">{current.label}</Heading>
 
       <div className="mt-12 grid gap-12 lg:grid-cols-[240px_1fr]">
-        <nav aria-label="Legal documents" className="flex flex-col lg:sticky lg:top-24 lg:self-start">
+        <nav aria-label="Documentos legales" className="flex flex-col lg:sticky lg:top-24 lg:self-start">
           {legalDocs.map((d) => (
             <Link
               key={d.slug}
@@ -31,7 +31,7 @@ export default function LegalPage() {
         </nav>
 
         <article className="max-w-[720px]">
-          <p className="font-mono text-[11px] uppercase tracking-[2px] text-muted">Last updated {current.updated}</p>
+          <p className="font-mono text-[11px] uppercase tracking-[2px] text-muted">Última actualización: {current.updated}</p>
           {current.sections.map((s, i) => (
             <section key={s.title} className="mt-10 border-t border-hairline pt-8">
               <h2 className="text-[26px] tracking-[3px]">{String(i + 1).padStart(2, '0')}. {s.title}</h2>

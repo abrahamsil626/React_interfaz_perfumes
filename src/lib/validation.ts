@@ -11,20 +11,20 @@ export type CardErrors = Partial<Record<keyof CardInput, string>>
 export function validateCard(card: CardInput, now = new Date()): CardErrors {
   const errors: CardErrors = {}
   const digits = card.number.replace(/\s+/g, '')
-  if (!/^\d{16}$/.test(digits)) errors.number = 'Enter a 16-digit card number'
-  if (card.name.trim().length < 2) errors.name = 'Enter the cardholder name'
+  if (!/^\d{16}$/.test(digits)) errors.number = 'Introduce un número de tarjeta de 16 dígitos'
+  if (card.name.trim().length < 2) errors.name = 'Introduce el nombre del titular'
 
   const m = /^(\d{2})\s*\/\s*(\d{2})$/.exec(card.expiry.trim())
   if (!m) {
-    errors.expiry = 'Use MM / YY'
+    errors.expiry = 'Usa el formato MM / AA'
   } else {
     const month = Number(m[1])
     const year = 2000 + Number(m[2])
     const endOfMonth = new Date(year, month, 0, 23, 59, 59)
-    if (month < 1 || month > 12 || endOfMonth < now) errors.expiry = 'Card expired or invalid'
+    if (month < 1 || month > 12 || endOfMonth < now) errors.expiry = 'Tarjeta caducada o no válida'
   }
 
-  if (!/^\d{3,4}$/.test(card.cvc)) errors.cvc = 'Enter 3 or 4 digits'
+  if (!/^\d{3,4}$/.test(card.cvc)) errors.cvc = 'Introduce 3 o 4 dígitos'
   return errors
 }
 

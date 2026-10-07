@@ -14,7 +14,7 @@ Interfaz e-commerce de **perfumería de lujo** en React + TypeScript, con una es
 
 ## Mockups
 
-Las imágenes completas (2560 px de ancho) están en [`mockups/`](mockups/). Vista previa:
+Los mockups están en inglés (tal como los generó Stitch); la aplicación implementada está en español. Las imágenes completas (2560 px de ancho) están en [`mockups/`](mockups/). Vista previa:
 
 | | | |
 |---|---|---|
@@ -27,11 +27,12 @@ Las imágenes completas (2560 px de ancho) están en [`mockups/`](mockups/). Vis
 
 ## Funcionalidad
 
+- Interfaz íntegramente **en español**.
 - Catálogo con filtros (familia, notas, arquetipo, intensidad) y orden por precio.
 - Ficha de producto con pirámide olfativa, tamaños y reseñas.
 - Buscador de fragancia (quiz de 5 pasos) con recomendaciones.
-- Carrito, código promocional (`MENTI10`), checkout con validación de tarjeta y confirmación de pedido.
-- Favoritos, login/registro con "Continue with Google", perfil y seguimiento de pedido.
+- Carrito con validación de cantidades (una línea en 0 se conserva con aviso y no se paga; solo `Eliminar` la quita), código promocional (`MENTI10`), checkout con validación de tarjeta y confirmación de pedido.
+- Favoritos, login/registro con "Continuar con Google", perfil y seguimiento de pedido.
 - Contacto con boutiques, FAQ, nosotros y documentos legales.
 
 > Backend, pagos y autenticación son **simulados** en el cliente (estado + `localStorage`).

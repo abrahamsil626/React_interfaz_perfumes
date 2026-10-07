@@ -1,75 +1,75 @@
 import type { Boutique, FaqItem, LegalDoc, Review } from '@/types'
 
 export const reviews: Review[] = [
-  { id: 'r1', stars: 5, title: 'A triumph of architecture', quote: 'Obsidia Noir stays grounded yet mysterious, the mineral accord cutting sharply through the dark woods.', author: 'Vogue International', product: 'Obsidia Noir', verified: true },
-  { id: 'r2', stars: 5, title: 'Quiet luxury', quote: 'The sheer weight of the smoked flacon prepares you for the gravity of the juice inside. Unapologetic quiet luxury in its rawest state.', author: 'Architectural Digest', product: 'Obsidia Noir', verified: true },
-  { id: 'r3', stars: 5, title: 'Unmistakable', quote: 'Incredible sillage. Distinctive without being overpowering. An indelible signature for evening wear that lasts well beyond dawn.', author: 'M. V., Private Collector', product: 'Homme Noir Extrait', verified: true },
-  { id: 'r4', stars: 5, title: 'Cold and magnificent', quote: 'Céleste Monolith smells like standing in a mountain pass at first light. Nothing else I own comes close.', author: 'A. L., Paris', product: 'Céleste Monolith', verified: true },
-  { id: 'r5', stars: 4, title: 'Superb, demanding', quote: 'Not an easy scent, and that is the point. It rewards patience. The dry-down on skin is extraordinary.', author: 'K. T., Tokyo', product: 'Monolith Brut', verified: true },
-  { id: 'r6', stars: 5, title: 'Worth the wait', quote: 'The packaging, the certificate, the discovery vials. Every detail is considered. The juice lives up to it.', author: 'S. R., New York', product: 'Aethel Noir', verified: true },
-  { id: 'r7', stars: 4, title: 'Elegant and serious', quote: 'A grown-up leather. Slightly more intense than I expected, but it settles into something beautiful.', author: 'D. P., Milan', product: 'Obsidienne Pur', verified: false },
-  { id: 'r8', stars: 5, title: 'My new signature', quote: 'The Paligoon Noir is incense without the church. Smoky, floral, deeply nocturnal.', author: 'E. B., Geneva', product: 'The Paligoon Noir', verified: true },
+  { id: 'r1', stars: 5, title: 'Un triunfo de la arquitectura olfativa', quote: 'Obsidia Noir se mantiene firme y misterioso; el acorde mineral corta con precisión entre las maderas oscuras.', author: 'Vogue International', product: 'Obsidia Noir', verified: true },
+  { id: 'r2', stars: 5, title: 'Lujo silencioso', quote: 'El peso del frasco ahumado te prepara para la gravedad del jugo. Lujo discreto en su estado más puro.', author: 'Architectural Digest', product: 'Obsidia Noir', verified: true },
+  { id: 'r3', stars: 5, title: 'Inconfundible', quote: 'Una estela increíble. Distintivo sin ser abrumador. Una firma indeleble para la noche que dura mucho después del amanecer.', author: 'M. V., coleccionista privado', product: 'Homme Noir Extrait', verified: true },
+  { id: 'r4', stars: 5, title: 'Frío y magnífico', quote: 'Céleste Monolith huele a estar en un paso de montaña a la primera luz. Nada de lo que tengo se le acerca.', author: 'A. L., París', product: 'Céleste Monolith', verified: true },
+  { id: 'r5', stars: 4, title: 'Soberbio y exigente', quote: 'No es un aroma fácil, y ese es el punto. Premia la paciencia. El fondo sobre la piel es extraordinario.', author: 'K. T., Tokio', product: 'Monolith Brut', verified: true },
+  { id: 'r6', stars: 5, title: 'Valió la espera', quote: 'El empaque, el certificado, los viales de descubrimiento. Cada detalle está cuidado. El jugo está a la altura.', author: 'S. R., Nueva York', product: 'Aethel Noir', verified: true },
+  { id: 'r7', stars: 4, title: 'Elegante y serio', quote: 'Un cuero para adultos. Algo más intenso de lo que esperaba, pero se asienta en algo hermoso.', author: 'D. P., Milán', product: 'Obsidienne Pur', verified: false },
+  { id: 'r8', stars: 5, title: 'Mi nueva firma', quote: 'The Paligoon Noir es incienso sin iglesia. Ahumado, floral, profundamente nocturno.', author: 'E. B., Ginebra', product: 'The Paligoon Noir', verified: true },
 ]
 
 export const boutiques: Boutique[] = [
-  { city: 'Paris', address: '24 Place Vendôme, 75001 Paris', hours: 'MON–SAT 10:00–19:00', phone: '+33 1 42 60 00 00' },
-  { city: 'Milan', address: 'Via Montenapoleone 12, 20121 Milano', hours: 'MON–SAT 10:00–19:30', phone: '+39 02 7600 0000' },
-  { city: 'New York', address: '720 Madison Avenue, New York, NY 10065', hours: 'MON–SAT 11:00–19:00', phone: '+1 212 555 0100' },
-  { city: 'Dubai', address: 'The Dubai Mall, Fashion Avenue, Dubai', hours: 'DAILY 10:00–23:00', phone: '+971 4 555 0100' },
+  { city: 'París', address: '24 Place Vendôme, 75001 París', hours: 'LUN–SÁB 10:00–19:00', phone: '+33 1 42 60 00 00' },
+  { city: 'Milán', address: 'Via Montenapoleone 12, 20121 Milán', hours: 'LUN–SÁB 10:00–19:30', phone: '+39 02 7600 0000' },
+  { city: 'Nueva York', address: '720 Madison Avenue, Nueva York, NY 10065', hours: 'LUN–SÁB 11:00–19:00', phone: '+1 212 555 0100' },
+  { city: 'Dubái', address: 'The Dubai Mall, Fashion Avenue, Dubái', hours: 'TODOS LOS DÍAS 10:00–23:00', phone: '+971 4 555 0100' },
 ]
 
 export const faqs: FaqItem[] = [
-  { id: 'f1', category: 'Shipping', question: 'How long does delivery take?', answer: 'Orders are dispatched within 24 hours and delivered in 24–48 hours by climate-controlled courier. Delivery is complimentary worldwide.' },
-  { id: 'f2', category: 'Shipping', question: 'Do you ship internationally?', answer: 'Yes. We ship to over 60 countries. Duties and regional taxes are included in the price shown at checkout.' },
-  { id: 'f3', category: 'Returns', question: 'Can I return a fragrance?', answer: 'Unopened flacons in their original sealed packaging may be returned within 30 days for a full refund.' },
-  { id: 'f4', category: 'Returns', question: 'What if my order arrives damaged?', answer: 'Contact us within 48 hours with a photograph. We will send a replacement at no cost.' },
-  { id: 'f5', category: 'Authenticity', question: 'How do I verify authenticity?', answer: 'Every flacon carries a numbered certificate of provenance sealed in wax, matched to a batch record held in our atelier.' },
-  { id: 'f6', category: 'Authenticity', question: 'Are your fragrances sold elsewhere?', answer: 'Menti Parfum is sold exclusively through this site and our four boutiques.' },
-  { id: 'f7', category: 'Payment', question: 'Which payment methods are accepted?', answer: 'Visa, Mastercard, American Express, PayPal, Apple Pay and Google Pay. All payments are encrypted end to end.' },
-  { id: 'f8', category: 'Payment', question: 'Do you offer a promotional code?', answer: 'New clients receive MENTI10 for 10% off their first order. Enter it in your bag before checkout.' },
-  { id: 'f9', category: 'Care', question: 'How should I store my fragrance?', answer: 'Keep it away from light and heat, ideally in its box at a stable 12–15 °C. Stored well, a flacon matures gracefully for years.' },
+  { id: 'f1', category: 'Envíos', question: '¿Cuánto tarda la entrega?', answer: 'Los pedidos se despachan en 24 horas y se entregan en 24–48 horas mediante mensajería con clima controlado. El envío es gratuito a todo el mundo.' },
+  { id: 'f2', category: 'Envíos', question: '¿Envían al extranjero?', answer: 'Sí. Enviamos a más de 60 países. Los aranceles e impuestos regionales están incluidos en el precio que ves al pagar.' },
+  { id: 'f3', category: 'Devoluciones', question: '¿Puedo devolver una fragancia?', answer: 'Los frascos sin abrir, en su embalaje original sellado, pueden devolverse en un plazo de 30 días con reembolso completo.' },
+  { id: 'f4', category: 'Devoluciones', question: '¿Qué pasa si mi pedido llega dañado?', answer: 'Contáctanos en un plazo de 48 horas con una fotografía. Te enviaremos un reemplazo sin costo.' },
+  { id: 'f5', category: 'Autenticidad', question: '¿Cómo verifico la autenticidad?', answer: 'Cada frasco incluye un certificado de procedencia numerado y sellado con lacre, vinculado a un registro de lote que conserva nuestro atelier.' },
+  { id: 'f6', category: 'Autenticidad', question: '¿Venden sus fragancias en otros lugares?', answer: 'Menti Parfum se vende exclusivamente en este sitio y en nuestras cuatro boutiques.' },
+  { id: 'f7', category: 'Pago', question: '¿Qué métodos de pago aceptan?', answer: 'Visa, Mastercard, American Express, PayPal, Apple Pay y Google Pay. Todos los pagos se cifran de extremo a extremo.' },
+  { id: 'f8', category: 'Pago', question: '¿Ofrecen algún código promocional?', answer: 'Los clientes nuevos reciben MENTI10 para un 10 % de descuento en su primer pedido. Introdúcelo en tu bolsa antes de pagar.' },
+  { id: 'f9', category: 'Cuidado', question: '¿Cómo debo guardar mi fragancia?', answer: 'Mantenla lejos de la luz y el calor, idealmente en su caja a una temperatura estable de 12–15 °C. Bien conservado, un frasco madura con elegancia durante años.' },
 ]
 
 export const legalDocs: LegalDoc[] = [
   {
     slug: 'terms',
-    label: 'Terms of Service',
-    updated: '2026-01-15',
+    label: 'Términos del servicio',
+    updated: '15 de enero de 2026',
     sections: [
-      { title: 'Acceptance of terms', body: 'By accessing Menti Parfum you agree to these terms. If you do not agree, please do not use the site.' },
-      { title: 'Orders and pricing', body: 'All prices are shown in US dollars and include applicable duties. We reserve the right to refuse or cancel any order at our discretion.' },
-      { title: 'Limited editions', body: 'Numbered editions are allocated per client. Allocations are held in your bag for twenty-four minutes.' },
-      { title: 'Intellectual property', body: 'All imagery, text and formulations are the property of Menti Parfum and may not be reproduced without written consent.' },
+      { title: 'Aceptación de los términos', body: 'Al acceder a Menti Parfum aceptas estos términos. Si no estás de acuerdo, no utilices el sitio.' },
+      { title: 'Pedidos y precios', body: 'Todos los precios se muestran en dólares estadounidenses e incluyen los aranceles aplicables. Nos reservamos el derecho de rechazar o cancelar cualquier pedido a nuestra discreción.' },
+      { title: 'Ediciones limitadas', body: 'Las ediciones numeradas se asignan por cliente. Las asignaciones se reservan en tu bolsa durante veinticuatro minutos.' },
+      { title: 'Propiedad intelectual', body: 'Todas las imágenes, textos y formulaciones son propiedad de Menti Parfum y no pueden reproducirse sin consentimiento escrito.' },
     ],
   },
   {
     slug: 'privacy',
-    label: 'Privacy Policy',
-    updated: '2026-01-15',
+    label: 'Política de privacidad',
+    updated: '15 de enero de 2026',
     sections: [
-      { title: 'Information we collect', body: 'We collect the information you provide when creating an account or placing an order: name, email, delivery address and payment details.' },
-      { title: 'How we use it', body: 'Your data is used to fulfil orders, provide support and, with your consent, to send private releases. We never sell personal data.' },
-      { title: 'Payment security', body: 'Payment details are processed by certified providers and are never stored on our servers.' },
-      { title: 'Your rights', body: 'You may access, correct or delete your data at any time by contacting our concierge.' },
+      { title: 'Información que recopilamos', body: 'Recopilamos la información que proporcionas al crear una cuenta o hacer un pedido: nombre, correo electrónico, dirección de entrega y datos de pago.' },
+      { title: 'Cómo la usamos', body: 'Tus datos se utilizan para gestionar pedidos, ofrecer soporte y, con tu consentimiento, enviarte lanzamientos privados. Nunca vendemos datos personales.' },
+      { title: 'Seguridad de los pagos', body: 'Los datos de pago son procesados por proveedores certificados y nunca se almacenan en nuestros servidores.' },
+      { title: 'Tus derechos', body: 'Puedes acceder, corregir o eliminar tus datos en cualquier momento contactando a nuestro servicio de conserjería.' },
     ],
   },
   {
     slug: 'returns',
-    label: 'Returns Policy',
-    updated: '2026-01-15',
+    label: 'Política de devoluciones',
+    updated: '15 de enero de 2026',
     sections: [
-      { title: 'Eligibility', body: 'Unopened flacons in original sealed packaging may be returned within 30 days of delivery.' },
-      { title: 'Process', body: 'Contact our concierge to receive a prepaid, insured return label. Refunds are issued to the original payment method within 5 business days of receipt.' },
-      { title: 'Exceptions', body: 'Opened fragrances, discovery vials and personalised items cannot be returned unless faulty.' },
+      { title: 'Elegibilidad', body: 'Los frascos sin abrir, en su embalaje original sellado, pueden devolverse en un plazo de 30 días desde la entrega.' },
+      { title: 'Proceso', body: 'Contacta a nuestro servicio de conserjería para recibir una etiqueta de devolución prepagada y asegurada. Los reembolsos se emiten al método de pago original en un plazo de 5 días hábiles desde la recepción.' },
+      { title: 'Excepciones', body: 'Las fragancias abiertas, los viales de descubrimiento y los artículos personalizados no pueden devolverse salvo que sean defectuosos.' },
     ],
   },
 ]
 
-export const faqCategories = ['Shipping', 'Returns', 'Authenticity', 'Payment', 'Care'] as const
+export const faqCategories = ['Envíos', 'Devoluciones', 'Autenticidad', 'Pago', 'Cuidado'] as const
 
 export const collections = [
-  { name: 'Obsidian', line: 'Smoked birch, basalt and cold metal.', image: '/images/products/obsidian-cuts.jpg' },
-  { name: 'Nocturne', line: 'Night-blooming jasmine under incense.', image: '/images/products/faceted-noir.jpg' },
-  { name: 'Ambre', line: 'Volcanic amber and aged vetiver.', image: '/images/products/smoked-square.jpg' },
-  { name: 'Vétiver', line: 'Dry roots, cold stone and leather.', image: '/images/products/smoked-cylinder.jpg' },
+  { name: 'Obsidiana', line: 'Abedul ahumado, basalto y metal frío.', image: '/images/products/obsidian-cuts.jpg' },
+  { name: 'Nocturno', line: 'Jazmín de floración nocturna bajo incienso.', image: '/images/products/faceted-noir.jpg' },
+  { name: 'Ámbar', line: 'Ámbar volcánico y vetiver añejo.', image: '/images/products/smoked-square.jpg' },
+  { name: 'Vetiver', line: 'Raíces secas, piedra fría y cuero.', image: '/images/products/smoked-cylinder.jpg' },
 ]

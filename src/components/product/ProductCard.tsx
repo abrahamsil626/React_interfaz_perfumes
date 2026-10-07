@@ -12,17 +12,17 @@ export function ProductCard({ product, price }: { product: Product; price?: numb
   return (
     <article className="group">
       <div className="relative aspect-square border border-hairline bg-canvas">
-        <Link to={`/product/${product.slug}`} aria-label={`View ${product.name}`}>
+        <Link to={`/product/${product.slug}`} aria-label={`Ver ${product.name}`}>
           <img
             src={product.image}
-            alt={`${product.name} flacon`}
+            alt={`Frasco ${product.name}`}
             loading="lazy"
             className="size-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
           />
         </Link>
         <button
           type="button"
-          aria-label={fav ? `Remove ${product.name} from favorites` : `Add ${product.name} to favorites`}
+          aria-label={fav ? `Quitar ${product.name} de favoritos` : `Añadir ${product.name} a favoritos`}
           aria-pressed={fav}
           onClick={() => toggle(product.slug)}
           className="absolute right-3 top-3 inline-flex size-9 items-center justify-center bg-canvas/60 text-ink"

@@ -21,7 +21,7 @@ export default function ReviewsPage() {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault()
     if (!form.title.trim() || !form.quote.trim() || !form.author.trim()) {
-      setError('Title, review and name are required.')
+      setError('El título, la opinión y el nombre son obligatorios.')
       return
     }
     setList([{ id: `r${Date.now()}`, ...form, verified: false }, ...list])
@@ -31,16 +31,16 @@ export default function ReviewsPage() {
   }
 
   return (
-    <Section label="Reviews">
-      <Eyebrow className="mb-4">Archival dispatches</Eyebrow>
-      <Heading as="h1" size="xl">Voices</Heading>
+    <Section label="Opiniones">
+      <Eyebrow className="mb-4">Despachos del archivo</Eyebrow>
+      <Heading as="h1" size="xl">Voces</Heading>
       <Rule className="my-10" />
 
       <div className="grid gap-12 lg:grid-cols-[320px_1fr]">
-        <aside aria-label="Rating summary">
-          <p className="font-display text-[96px] leading-none tracking-[4px] text-ink">{average}</p>
+        <aside aria-label="Resumen de valoraciones">
+          <p className="font-display text-[96px] leading-none tracking-[4px] text-ink">{average.replace('.', ',')}</p>
           <Stars value={Math.round(Number(average))} />
-          <p className="mt-2 font-mono text-[11px] uppercase tracking-[2px] text-muted">{list.length} reviews</p>
+          <p className="mt-2 font-mono text-[11px] uppercase tracking-[2px] text-muted">{list.length} opiniones</p>
           <ul className="m-0 mt-8 list-none space-y-3 p-0">
             {[5, 4, 3, 2, 1].map((n) => {
               const count = list.filter((r) => r.stars === n).length
@@ -56,36 +56,36 @@ export default function ReviewsPage() {
             })}
           </ul>
           <Button className="mt-8" onClick={() => setOpen((v) => !v)} aria-expanded={open}>
-            Write a review
+            Escribir una opinión
           </Button>
         </aside>
 
         <div>
           {open && (
-            <form onSubmit={onSubmit} noValidate aria-label="Write a review" className="mb-12 grid gap-6 border border-hairline bg-surface-card p-6 md:grid-cols-2">
-              <Input label="Title" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
-              <Input label="Your name" value={form.author} onChange={(e) => setForm({ ...form, author: e.target.value })} />
+            <form onSubmit={onSubmit} noValidate aria-label="Escribir una opinión" className="mb-12 grid gap-6 border border-hairline bg-surface-card p-6 md:grid-cols-2">
+              <Input label="Título" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
+              <Input label="Tu nombre" value={form.author} onChange={(e) => setForm({ ...form, author: e.target.value })} />
               <div className="flex flex-col gap-1">
-                <label htmlFor="rev-product" className="font-mono text-[11px] uppercase tracking-[2px] text-muted">Fragrance</label>
+                <label htmlFor="rev-product" className="font-mono text-[11px] uppercase tracking-[2px] text-muted">Fragancia</label>
                 <select id="rev-product" value={form.product} onChange={(e) => setForm({ ...form, product: e.target.value })} className="h-11 border-0 border-b border-hairline-strong bg-canvas font-mono text-[13px] uppercase tracking-[2px] text-ink">
                   {products.map((p) => <option key={p.slug}>{p.name}</option>)}
                 </select>
               </div>
               <div className="flex flex-col gap-1">
-                <label htmlFor="rev-stars" className="font-mono text-[11px] uppercase tracking-[2px] text-muted">Rating</label>
+                <label htmlFor="rev-stars" className="font-mono text-[11px] uppercase tracking-[2px] text-muted">Valoración</label>
                 <select id="rev-stars" value={form.stars} onChange={(e) => setForm({ ...form, stars: Number(e.target.value) })} className="h-11 border-0 border-b border-hairline-strong bg-canvas font-mono text-[13px] uppercase tracking-[2px] text-ink">
-                  {[5, 4, 3, 2, 1].map((n) => <option key={n} value={n}>{n} stars</option>)}
+                  {[5, 4, 3, 2, 1].map((n) => <option key={n} value={n}>{n} {n === 1 ? 'estrella' : 'estrellas'}</option>)}
                 </select>
               </div>
-              <Input label="Your review" className="md:col-span-2" value={form.quote} onChange={(e) => setForm({ ...form, quote: e.target.value })} />
+              <Input label="Tu opinión" className="md:col-span-2" value={form.quote} onChange={(e) => setForm({ ...form, quote: e.target.value })} />
               {error && <p role="alert" className="font-mono text-[11px] uppercase tracking-[2px] text-link md:col-span-2">{error}</p>}
-              <div className="md:col-span-2"><Button type="submit">Publish review</Button></div>
+              <div className="md:col-span-2"><Button type="submit">Publicar opinión</Button></div>
             </form>
           )}
 
-          <div className="mb-8 flex gap-3" role="group" aria-label="Filter reviews">
-            <Chip active={filter === 'all'} onClick={() => setFilter('all')}>All</Chip>
-            <Chip active={filter === 'five'} onClick={() => setFilter('five')}>5 stars</Chip>
+          <div className="mb-8 flex gap-3" role="group" aria-label="Filtrar opiniones">
+            <Chip active={filter === 'all'} onClick={() => setFilter('all')}>Todas</Chip>
+            <Chip active={filter === 'five'} onClick={() => setFilter('five')}>5 estrellas</Chip>
           </div>
 
           <ul className="m-0 list-none p-0">
@@ -95,7 +95,7 @@ export default function ReviewsPage() {
                 <h2 className="mt-3 text-[24px] tracking-[2px]">{r.title}</h2>
                 <p className="mt-3 max-w-2xl font-text text-[18px] text-body">“{r.quote}”</p>
                 <p className="mt-4 font-mono text-[10px] uppercase tracking-[2px] text-muted">
-                  {r.author} // {r.product} {r.verified && '// Verified purchase'}
+                  {r.author} {'//'} {r.product} {r.verified && '// Compra verificada'}
                 </p>
               </li>
             ))}

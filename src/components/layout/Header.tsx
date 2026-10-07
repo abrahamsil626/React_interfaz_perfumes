@@ -29,7 +29,7 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           className="font-mono text-[12px] uppercase tracking-[2px] text-ink"
         >
-          {open ? 'Close' : 'Menu'}
+          {open ? 'Cerrar' : 'Menú'}
         </button>
 
         <Link
@@ -39,17 +39,17 @@ export function Header() {
           Menti Parfum
         </Link>
 
-        <nav aria-label="Account and bag" className="flex items-center">
-          <Link to="/collection" aria-label="Search the collection" className={iconBtn}>
+        <nav aria-label="Cuenta y bolsa" className="flex items-center">
+          <Link to="/collection" aria-label="Buscar en la colección" className={iconBtn}>
             <SearchIcon />
           </Link>
-          <Link to="/favorites" aria-label={`Favorites (${slugs.length})`} className={iconBtn}>
+          <Link to="/favorites" aria-label={`Favoritos (${slugs.length})`} className={iconBtn}>
             <HeartIcon />
           </Link>
-          <Link to={user ? '/account' : '/login'} aria-label={user ? 'My account' : 'Sign in'} className={iconBtn}>
+          <Link to={user ? '/account' : '/login'} aria-label={user ? 'Mi cuenta' : 'Iniciar sesión'} className={iconBtn}>
             <UserIcon />
           </Link>
-          <Link to="/bag" aria-label={`Bag, ${count} items`} className={iconBtn}>
+          <Link to="/bag" aria-label={`Bolsa, ${count} ${count === 1 ? 'artículo' : 'artículos'}`} className={iconBtn}>
             <BagIcon />
             <span className="ml-0.5 font-mono text-[11px] tracking-[1px] text-muted">({count})</span>
           </Link>
@@ -58,10 +58,10 @@ export function Header() {
 
       {open && (
         <div id="site-menu" className="fixed inset-x-0 top-14 bottom-0 z-30 overflow-y-auto bg-canvas">
-          <nav aria-label="Main" className="mx-auto flex max-w-page flex-col px-6 py-12 md:px-20">
+          <nav aria-label="Principal" className="mx-auto flex max-w-page flex-col px-6 py-12 md:px-20">
             <button
               type="button"
-              aria-label="Close menu"
+              aria-label="Cerrar menú"
               onClick={() => setOpen(false)}
               className="mb-8 self-end text-ink md:hidden"
             >

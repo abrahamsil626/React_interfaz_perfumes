@@ -14,48 +14,48 @@ interface Step {
 // AC-QUIZ-1: 5 pasos
 const steps: Step[] = [
   {
-    question: 'Which atmosphere defines you?',
+    question: '¿Qué atmósfera te define?',
     options: [
-      { label: 'Woody', caption: 'Smoked cedar, birch and cold basalt.', match: (p) => p.family === 'Smoked Woods' },
-      { label: 'Floral', caption: 'Night-blooming jasmine and iris.', match: (p) => p.family === 'Nocturnal Floral' },
-      { label: 'Oriental', caption: 'Volcanic amber, resin and vanilla.', match: (p) => p.family === 'Volcanic Amber' },
-      { label: 'Fresh', caption: 'Cold ozone, mineral and white cedar.', match: (p) => p.family === 'Cold Mineral' },
+      { label: 'Amaderado', caption: 'Cedro ahumado, abedul y basalto frío.', match: (p) => p.family === 'Maderas ahumadas' },
+      { label: 'Floral', caption: 'Jazmín nocturno e iris.', match: (p) => p.family === 'Floral nocturno' },
+      { label: 'Oriental', caption: 'Ámbar volcánico, resina y vainilla.', match: (p) => p.family === 'Ámbar volcánico' },
+      { label: 'Fresco', caption: 'Ozono frío, mineral y cedro blanco.', match: (p) => p.family === 'Mineral frío' },
     ],
   },
   {
-    question: 'When do you wear fragrance?',
+    question: '¿Cuándo usas fragancia?',
     options: [
-      { label: 'Evening', caption: 'Dense, dark and slow.', match: (p) => p.intensity !== 'Eau de Parfum' },
-      { label: 'Daytime', caption: 'Lighter and cleaner.', match: (p) => p.intensity === 'Eau de Parfum' },
-      { label: 'Always', caption: 'A single signature.', match: () => true },
-      { label: 'Occasions', caption: 'Reserved for moments.', match: (p) => !!p.limited },
+      { label: 'Noche', caption: 'Densa, oscura y lenta.', match: (p) => p.intensity !== 'Eau de Parfum' },
+      { label: 'Día', caption: 'Más ligera y limpia.', match: (p) => p.intensity === 'Eau de Parfum' },
+      { label: 'Siempre', caption: 'Una única firma.', match: () => true },
+      { label: 'Ocasiones', caption: 'Reservada para momentos.', match: (p) => !!p.limited },
     ],
   },
   {
-    question: 'How present should it be?',
+    question: '¿Qué tan presente debe ser?',
     options: [
-      { label: 'Whisper', caption: 'Close to the skin.', match: (p) => p.intensity === 'Eau de Parfum' },
-      { label: 'Presence', caption: 'Noticeable, never loud.', match: (p) => p.intensity === 'Pure Parfum' },
-      { label: 'Monolithic', caption: 'Unmistakable sillage.', match: (p) => p.intensity === 'Extrait de Parfum' },
-      { label: 'Surprise me', caption: 'Let the house decide.', match: () => true },
+      { label: 'Susurro', caption: 'Cerca de la piel.', match: (p) => p.intensity === 'Eau de Parfum' },
+      { label: 'Presencia', caption: 'Perceptible, nunca estridente.', match: (p) => p.intensity === 'Pure Parfum' },
+      { label: 'Monolítica', caption: 'Una estela inconfundible.', match: (p) => p.intensity === 'Extrait de Parfum' },
+      { label: 'Sorpréndeme', caption: 'Que decida la casa.', match: () => true },
     ],
   },
   {
-    question: 'Which character suits you?',
+    question: '¿Qué carácter te representa?',
     options: [
-      { label: 'Monolith', caption: 'Genderless and architectural.', match: (p) => p.archetype.startsWith('Genderless') },
-      { label: 'Dark masculine', caption: 'Leather, amber, depth.', match: (p) => p.archetype === 'Dark Masculine' },
-      { label: 'Nocturne', caption: 'Ethereal and nocturnal.', match: (p) => p.archetype === 'Ethereal Nocturne' },
-      { label: 'Open', caption: 'No preference.', match: () => true },
+      { label: 'Monolito', caption: 'Unisex y arquitectónico.', match: (p) => p.archetype.startsWith('Unisex') },
+      { label: 'Masculino oscuro', caption: 'Cuero, ámbar, profundidad.', match: (p) => p.archetype === 'Masculino oscuro' },
+      { label: 'Nocturno', caption: 'Etéreo y nocturno.', match: (p) => p.archetype === 'Nocturno etéreo' },
+      { label: 'Abierto', caption: 'Sin preferencia.', match: () => true },
     ],
   },
   {
-    question: 'Which note draws you in?',
+    question: '¿Qué nota te atrae?',
     options: [
-      { label: 'Obsidian', caption: 'Mineral, cold, sharp.', match: (p) => p.keyNotes.includes('Obsidian') },
-      { label: 'Incense', caption: 'Smoke and ritual.', match: (p) => p.keyNotes.includes('Incense') },
-      { label: 'Birch tar', caption: 'Smoked and leathery.', match: (p) => p.keyNotes.includes('Birch Tar') },
-      { label: 'Bourbon', caption: 'Warm vanilla depth.', match: (p) => p.keyNotes.includes('Bourbon') },
+      { label: 'Obsidiana', caption: 'Mineral, fría, afilada.', match: (p) => p.keyNotes.includes('Obsidiana') },
+      { label: 'Incienso', caption: 'Humo y ritual.', match: (p) => p.keyNotes.includes('Incienso') },
+      { label: 'Alquitrán de abedul', caption: 'Ahumada y curtida.', match: (p) => p.keyNotes.includes('Alquitrán de abedul') },
+      { label: 'Bourbon', caption: 'Profundidad cálida de vainilla.', match: (p) => p.keyNotes.includes('Bourbon') },
     ],
   },
 ]
@@ -78,11 +78,11 @@ export default function ScentFinderPage() {
 
   if (finished) {
     return (
-      <Section label="Results">
-        <Eyebrow className="mb-4">Diagnostic complete</Eyebrow>
-        <Heading as="h1" size="xl">Your Signature</Heading>
+      <Section label="Resultados">
+        <Eyebrow className="mb-4">Diagnóstico completo</Eyebrow>
+        <Heading as="h1" size="xl">Tu firma</Heading>
         <p className="mt-4 max-w-xl font-text text-[18px] italic text-body">
-          Three extractions matched to your olfactory profile.
+          Tres extracciones ajustadas a tu perfil olfativo.
         </p>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {recommendations().map((p) => (
@@ -90,9 +90,9 @@ export default function ScentFinderPage() {
           ))}
         </div>
         <div className="mt-12 flex gap-6">
-          <Button onClick={() => { setStep(0); setAnswers(steps.map(() => null)) }}>Retake</Button>
+          <Button onClick={() => { setStep(0); setAnswers(steps.map(() => null)) }}>Repetir</Button>
           <Link to="/collection" className="self-center font-mono text-[12px] uppercase tracking-[2px] text-ink underline underline-offset-8">
-            View full collection
+            Ver toda la colección
           </Link>
         </div>
       </Section>
@@ -103,8 +103,8 @@ export default function ScentFinderPage() {
   const chosen = answers[step]
 
   return (
-    <Section label="Scent finder">
-      <Eyebrow className="mb-6">Step {step + 1} / {steps.length}</Eyebrow>
+    <Section label="Buscador de fragancia">
+      <Eyebrow className="mb-6">Paso {step + 1} / {steps.length}</Eyebrow>
       <div className="mb-10 h-px bg-hairline">
         <div className="h-px bg-ink" style={{ width: `${((step + 1) / steps.length) * 100}%` }} />
       </div>
@@ -129,9 +129,9 @@ export default function ScentFinderPage() {
       </div>
 
       <div className="mt-12 flex gap-4">
-        <Button disabled={step === 0} onClick={() => setStep(step - 1)}>Back</Button>
+        <Button disabled={step === 0} onClick={() => setStep(step - 1)}>Atrás</Button>
         <Button disabled={chosen === null} onClick={() => setStep(step + 1)}>
-          {step === steps.length - 1 ? 'See results' : 'Continue'}
+          {step === steps.length - 1 ? 'Ver resultados' : 'Continuar'}
         </Button>
       </div>
     </Section>

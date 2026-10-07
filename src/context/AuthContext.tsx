@@ -14,7 +14,7 @@ interface AuthValue {
 const AuthContext = createContext<AuthValue | null>(null)
 
 const nameFromEmail = (email: string) => {
-  const local = email.split('@')[0] ?? 'Connoisseur'
+  const local = email.split('@')[0] ?? 'Conocedor'
   return local.charAt(0).toUpperCase() + local.slice(1)
 }
 

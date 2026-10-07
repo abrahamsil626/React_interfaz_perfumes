@@ -6,9 +6,9 @@ import { useCart, PROMO_CODE } from '@/context/CartContext'
 import { money, products } from '@/data/products'
 
 const blocks = [
-  { title: 'Gift Sets', body: 'Two numbered flacons in a hand-finished obsidian case, with a sealed certificate of provenance.', value: 'From $ 940 USD', image: '/images/products/faceted-noir.jpg' },
-  { title: 'Discovery Sample Kit', body: 'Eight 2ml vials of the permanent collection. The cost is credited to your first flacon.', value: '$ 65 USD', image: '/images/products/smoked-cylinder.jpg' },
-  { title: 'Loyalty Rewards', body: 'Earn one point per dollar. Redeem against private allocations and atelier appointments.', value: '1 point / $ 1', image: '/images/products/matte-gold.jpg' },
+  { title: 'Sets de regalo', body: 'Dos frascos numerados en un estuche de obsidiana acabado a mano, con certificado de procedencia sellado.', value: 'Desde $ 940 USD', image: '/images/products/faceted-noir.jpg' },
+  { title: 'Kit de descubrimiento', body: 'Ocho viales de 2 ml de la colección permanente. Su costo se abona a tu primer frasco.', value: '$ 65 USD', image: '/images/products/smoked-cylinder.jpg' },
+  { title: 'Programa de fidelidad', body: 'Acumula un punto por dólar. Canjéalo en asignaciones privadas y citas en el atelier.', value: '1 punto / $ 1', image: '/images/products/matte-gold.jpg' },
 ]
 
 const pad = (n: number) => String(n).padStart(2, '0')
@@ -29,18 +29,18 @@ export default function PromotionsPage() {
 
   return (
     <>
-      <section aria-label="Private sale" className="border-b border-hairline px-6 py-24 text-center md:py-32">
-        <Eyebrow className="mb-4">Ends in <time className="text-ink">{clock}</time></Eyebrow>
-        <Heading as="h1" size="xl">The Private Sale</Heading>
+      <section aria-label="Venta privada" className="border-b border-hairline px-6 py-24 text-center md:py-32">
+        <Eyebrow className="mb-4">Termina en <time className="text-ink">{clock}</time></Eyebrow>
+        <Heading as="h1" size="xl">La venta privada</Heading>
         <p className="mx-auto mt-5 max-w-lg font-text text-[18px] italic text-body">
-          Ten percent from the permanent collection with code <strong className="not-italic text-ink">{PROMO_CODE}</strong>, applied in your bag.
+          Un diez por ciento en la colección permanente con el código <strong className="not-italic text-ink">{PROMO_CODE}</strong>, aplicado en tu bolsa.
         </p>
         <div className="mt-8">
-          <Button to="/collection">Shop offers</Button>
+          <Button to="/collection">Ver ofertas</Button>
         </div>
       </section>
 
-      <Section label="Offers">
+      <Section label="Ofertas">
         <div className="grid gap-8 md:grid-cols-3">
           {blocks.map((b) => (
             <article key={b.title} className="border border-hairline bg-surface-card">
@@ -55,9 +55,9 @@ export default function PromotionsPage() {
         </div>
       </Section>
 
-      <Section label="Selected offers" className="border-t border-hairline">
-        <Eyebrow className="mb-3">Selected for the sale</Eyebrow>
-        <Heading>Preferred Extractions</Heading>
+      <Section label="Ofertas seleccionadas" className="border-t border-hairline">
+        <Eyebrow className="mb-3">Seleccionadas para la venta</Eyebrow>
+        <Heading>Extracciones preferidas</Heading>
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {products.slice(0, 4).map((p) => {
             const regular = p.sizes[p.sizes.length - 1].price
@@ -65,12 +65,12 @@ export default function PromotionsPage() {
             return (
               <article key={p.slug}>
                 <Link to={`/product/${p.slug}`} className="block border border-hairline">
-                  <img src={p.image} alt={`${p.name} flacon`} loading="lazy" className="aspect-square w-full object-cover" />
+                  <img src={p.image} alt={`Frasco ${p.name}`} loading="lazy" className="aspect-square w-full object-cover" />
                 </Link>
                 <h3 className="mt-4 text-[22px] tracking-[2px]">{p.name}</h3>
                 <p className="mt-1 font-mono text-[12px] uppercase tracking-[2px]">
-                  <s className="text-muted-soft" aria-label={`Regular price ${money(regular)}`}>{money(regular)}</s>
-                  <span className="ml-3 text-ink" aria-label={`Sale price ${money(promo)}`}>{money(promo)}</span>
+                  <s className="text-muted-soft" aria-label={`Precio habitual ${money(regular)}`}>{money(regular)}</s>
+                  <span className="ml-3 text-ink" aria-label={`Precio de oferta ${money(promo)}`}>{money(promo)}</span>
                 </p>
                 <Button
                   className="mt-4"
@@ -79,7 +79,7 @@ export default function PromotionsPage() {
                     setAdded(p.name)
                   }}
                 >
-                  Add to bag
+                  Añadir a la bolsa
                 </Button>
               </article>
             )
@@ -87,7 +87,7 @@ export default function PromotionsPage() {
         </div>
         {added && (
           <p role="status" className="mt-8 font-mono text-[11px] uppercase tracking-[2px] text-link">
-            {added} added. <Link to="/bag" className="underline underline-offset-4">View bag</Link> and enter {PROMO_CODE}.
+            {added} añadido. <Link to="/bag" className="underline underline-offset-4">Ver bolsa</Link> e introduce {PROMO_CODE}.
           </p>
         )}
       </Section>

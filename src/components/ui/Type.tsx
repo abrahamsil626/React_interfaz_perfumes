@@ -78,7 +78,7 @@ export function Chip({
 
 export function Stars({ value }: { value: number }) {
   return (
-    <span role="img" aria-label={`${value} out of 5 stars`} className="font-mono text-[14px] tracking-[3px] text-ink">
+    <span role="img" aria-label={`${value} de 5 estrellas`} className="font-mono text-[14px] tracking-[3px] text-ink">
       {'★'.repeat(value)}
       <span className="text-muted-soft">{'★'.repeat(5 - value)}</span>
     </span>

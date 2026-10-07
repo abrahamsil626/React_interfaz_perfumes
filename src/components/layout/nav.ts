@@ -4,49 +4,49 @@ export interface NavLink {
 }
 
 export const menuLinks: NavLink[] = [
-  { label: 'The Collection', to: '/collection' },
-  { label: 'Collections', to: '/collections' },
-  { label: 'Scent Finder', to: '/scent-finder' },
-  { label: 'Promotions', to: '/promotions' },
-  { label: 'Reviews', to: '/reviews' },
-  { label: 'The House', to: '/about' },
-  { label: 'Contact', to: '/contact' },
-  { label: 'FAQ', to: '/faq' },
-  { label: 'Track Order', to: '/track-order' },
+  { label: 'La colección', to: '/collection' },
+  { label: 'Colecciones', to: '/collections' },
+  { label: 'Buscador de fragancia', to: '/scent-finder' },
+  { label: 'Promociones', to: '/promotions' },
+  { label: 'Opiniones', to: '/reviews' },
+  { label: 'La casa', to: '/about' },
+  { label: 'Contacto', to: '/contact' },
+  { label: 'Preguntas frecuentes', to: '/faq' },
+  { label: 'Seguimiento de pedido', to: '/track-order' },
 ]
 
 export const footerColumns: { title: string; links: NavLink[] }[] = [
   {
-    title: 'Editions',
+    title: 'Ediciones',
     links: [
-      { label: 'Archive', to: '/collection' },
-      { label: 'Collections', to: '/collections' },
-      { label: 'Promotions', to: '/promotions' },
+      { label: 'Archivo', to: '/collection' },
+      { label: 'Colecciones', to: '/collections' },
+      { label: 'Promociones', to: '/promotions' },
     ],
   },
   {
-    title: 'Services',
+    title: 'Servicio',
     links: [
-      { label: 'Client Service', to: '/contact' },
-      { label: 'Atelier Appointments', to: '/contact' },
-      { label: 'Track Order', to: '/track-order' },
-      { label: 'FAQ', to: '/faq' },
+      { label: 'Atención al cliente', to: '/contact' },
+      { label: 'Citas en el atelier', to: '/contact' },
+      { label: 'Seguimiento de pedido', to: '/track-order' },
+      { label: 'Preguntas frecuentes', to: '/faq' },
     ],
   },
   {
-    title: 'Compliance',
+    title: 'Legal',
     links: [
-      { label: 'Terms of Service', to: '/legal/terms' },
-      { label: 'Privacy Policy', to: '/legal/privacy' },
-      { label: 'Returns Policy', to: '/legal/returns' },
+      { label: 'Términos del servicio', to: '/legal/terms' },
+      { label: 'Política de privacidad', to: '/legal/privacy' },
+      { label: 'Política de devoluciones', to: '/legal/returns' },
     ],
   },
   {
-    title: 'House',
+    title: 'La casa',
     links: [
-      { label: 'About', to: '/about' },
-      { label: 'Reviews', to: '/reviews' },
-      { label: 'Scent Finder', to: '/scent-finder' },
+      { label: 'Nosotros', to: '/about' },
+      { label: 'Opiniones', to: '/reviews' },
+      { label: 'Buscador de fragancia', to: '/scent-finder' },
     ],
   },
 ]

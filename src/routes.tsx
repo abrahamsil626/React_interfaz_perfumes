@@ -45,11 +45,11 @@ export const routes: RouteObject[] = [
     ],
   },
   {
-    element: <FocusLayout backTo="/bag" backLabel="Return to bag" />,
+    element: <FocusLayout backTo="/bag" backLabel="Volver a la bolsa" />,
     children: [{ path: '/checkout', element: <CheckoutPage /> }],
   },
   {
-    element: <FocusLayout backTo="/" backLabel="Return to archive" />,
+    element: <FocusLayout backTo="/" backLabel="Volver al archivo" />,
     children: [{ path: '/login', element: <LoginPage /> }],
   },
 ]

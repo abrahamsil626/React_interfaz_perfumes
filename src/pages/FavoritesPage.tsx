@@ -13,14 +13,14 @@ export default function FavoritesPage() {
   const items = slugs.map(getProduct).filter((p): p is Product => !!p)
 
   return (
-    <Section label="Favorites">
-      <Eyebrow className="mb-4">Your selection</Eyebrow>
-      <Heading as="h1" size="xl">Your Favorites ({items.length})</Heading>
+    <Section label="Favoritos">
+      <Eyebrow className="mb-4">Tu selección</Eyebrow>
+      <Heading as="h1" size="xl">Tus favoritos ({items.length})</Heading>
 
       {items.length === 0 ? (
         <div className="mt-12">
-          <p className="font-text text-[20px] italic text-body">No favorites yet. Tap the heart on any flacon to keep it here.</p>
-          <div className="mt-8"><Button to="/collection">Explore the collection</Button></div>
+          <p className="font-text text-[20px] italic text-body">Aún no tienes favoritos. Toca el corazón de cualquier frasco para guardarlo aquí.</p>
+          <div className="mt-8"><Button to="/collection">Explorar la colección</Button></div>
         </div>
       ) : (
         <ul className="m-0 mt-12 grid list-none gap-x-8 gap-y-14 p-0 sm:grid-cols-2 lg:grid-cols-3">
@@ -29,8 +29,8 @@ export default function FavoritesPage() {
             return (
               <li key={p.slug}>
                 <div className="relative border border-hairline">
-                  <Link to={`/product/${p.slug}`} aria-label={`View ${p.name}`}>
-                    <img src={p.image} alt={`${p.name} flacon`} loading="lazy" className="aspect-square w-full object-cover" />
+                  <Link to={`/product/${p.slug}`} aria-label={`Ver ${p.name}`}>
+                    <img src={p.image} alt={`Frasco ${p.name}`} loading="lazy" className="aspect-square w-full object-cover" />
                   </Link>
                   <span className="absolute right-3 top-3 text-ink"><HeartIcon size={16} filled /></span>
                 </div>
@@ -40,8 +40,8 @@ export default function FavoritesPage() {
                 </div>
                 <p className="mt-1 font-mono text-[11px] uppercase tracking-[2px] text-muted">{p.family}</p>
                 <div className="mt-5 flex items-center gap-6">
-                  <Button onClick={() => add(p.slug, size.ml)} aria-label={`Add ${p.name} to bag`}>Add to bag</Button>
-                  <Button variant="text" onClick={() => toggle(p.slug)} aria-label={`Remove ${p.name} from favorites`}>Remove</Button>
+                  <Button onClick={() => add(p.slug, size.ml)} aria-label={`Añadir ${p.name} a la bolsa`}>Añadir a la bolsa</Button>
+                  <Button variant="text" onClick={() => toggle(p.slug)} aria-label={`Quitar ${p.name} de favoritos`}>Quitar</Button>
                 </div>
               </li>
             )

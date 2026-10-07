@@ -5,16 +5,16 @@ import { Chip, Eyebrow, Heading, Section } from '@/components/ui/Type'
 import { faqCategories, faqs } from '@/data/content'
 
 export default function FaqPage() {
-  const [category, setCategory] = useState<string>('Shipping')
+  const [category, setCategory] = useState<string>('Envíos')
   const [openId, setOpenId] = useState<string | null>(null)
   const list = faqs.filter((f) => f.category === category)
 
   return (
-    <Section label="FAQ">
-      <Eyebrow className="mb-4">Client service</Eyebrow>
-      <Heading as="h1" size="xl">Frequently Asked Questions</Heading>
+    <Section label="Preguntas frecuentes">
+      <Eyebrow className="mb-4">Atención al cliente</Eyebrow>
+      <Heading as="h1" size="xl">Preguntas frecuentes</Heading>
 
-      <div className="mt-10 flex flex-wrap gap-3" role="group" aria-label="Categories">
+      <div className="mt-10 flex flex-wrap gap-3" role="group" aria-label="Categorías">
         {faqCategories.map((c) => (
           <Chip key={c} active={category === c} onClick={() => { setCategory(c); setOpenId(null) }}>{c}</Chip>
         ))}
@@ -46,8 +46,8 @@ export default function FaqPage() {
       </ul>
 
       <div className="mt-20 text-center">
-        <Eyebrow className="mb-4">Still need help?</Eyebrow>
-        <Button to="/contact">Contact us</Button>
+        <Eyebrow className="mb-4">¿Necesitas más ayuda?</Eyebrow>
+        <Button to="/contact">Contáctanos</Button>
       </div>
     </Section>
   )

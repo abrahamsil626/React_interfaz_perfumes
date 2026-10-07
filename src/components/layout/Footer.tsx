@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <p className="font-display text-[14px] uppercase tracking-[6px] text-ink">Menti Parfum</p>
             <p className="mt-4 max-w-xs font-text text-[16px] text-body">
-              Monolithic structures conceived for olfactive eternity. Rare resinous extracts and hand-blown obsidian glass.
+              Estructuras monolíticas concebidas para la eternidad olfativa. Extractos resinosos raros y vidrio de obsidiana soplado a mano.
             </p>
           </div>
           {footerColumns.map((col) => (
@@ -29,9 +29,9 @@ export function Footer() {
         </div>
         <div className="mt-16 flex flex-col gap-4 border-t border-hairline pt-8 md:flex-row md:justify-between">
           <p className="font-mono text-[11px] uppercase tracking-[2px] text-muted-soft">
-            © 2026 Menti Parfum. All rights reserved.
+            © 2026 Menti Parfum. Todos los derechos reservados.
           </p>
-          <p className="font-mono text-[11px] uppercase tracking-[2px] text-muted-soft">Grasse / Paris / Kyoto</p>
+          <p className="font-mono text-[11px] uppercase tracking-[2px] text-muted-soft">Grasse / París / Kioto</p>
         </div>
         <p className="mt-10 text-center font-display text-[14px] uppercase tracking-[6px] text-muted">Menti Parfum</p>
       </div>

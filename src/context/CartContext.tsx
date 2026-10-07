@@ -9,7 +9,12 @@ export const PROMO_CODE = 'MENTI10'
 const PROMO_RATE = 0.1
 
 interface CartValue {
+  /** Todas las líneas, incluidas las de cantidad 0 (solo `remove` las elimina). */
   lines: CartLine[]
+  /** Líneas con cantidad ≥ 1: las únicas que cuentan para totales y pedido. */
+  validLines: CartLine[]
+  hasEmptyLines: boolean
+  canCheckout: boolean
   count: number
   subtotal: number
   discount: number
@@ -48,12 +53,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     )
   }, [])
 
+  // AC-CART-2: nunca elimina; valores negativos o no numéricos se llevan a 0
   const setQty = useCallback((slug: string, ml: number, qty: number) => {
-    setLines((prev) =>
-      qty <= 0
-        ? prev.filter((l) => !same(l, slug, ml))
-        : prev.map((l) => (same(l, slug, ml) ? { ...l, qty } : l)),
-    )
+    const safe = Number.isFinite(qty) ? Math.max(0, Math.floor(qty)) : 0
+    setLines((prev) => prev.map((l) => (same(l, slug, ml) ? { ...l, qty: safe } : l)))
   }, [])
 
   const remove = useCallback((slug: string, ml: number) => {
@@ -71,27 +74,31 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setPromo(null)
   }, [])
 
+  const validLines = useMemo(() => lines.filter((l) => l.qty >= 1), [lines])
+  const hasEmptyLines = lines.length > validLines.length
+  const canCheckout = validLines.length > 0
+
   const subtotal = useMemo(
     () =>
-      lines.reduce((sum, l) => {
+      validLines.reduce((sum, l) => {
         const p = getProduct(l.slug)
         return p ? sum + priceOf(p, l.ml) * l.qty : sum
       }, 0),
-    [lines],
+    [validLines],
   )
   const discount = promo ? Math.round(subtotal * PROMO_RATE) : 0
   const total = subtotal - discount
-  const count = lines.reduce((n, l) => n + l.qty, 0)
+  const count = validLines.reduce((n, l) => n + l.qty, 0)
 
   const placeOrder = useCallback((): Order | null => {
-    if (lines.length === 0) return null
+    if (validLines.length === 0) return null
     const placed = new Date()
     const eta = new Date(placed.getTime() + 2 * 24 * 60 * 60 * 1000)
     const created: Order = {
       number: `MP-${String(placed.getTime()).slice(-7)}`,
       placedAt: placed.toISOString(),
       estimatedDelivery: eta.toISOString(),
-      lines: lines.flatMap((l) => {
+      lines: validLines.flatMap((l) => {
         const p = getProduct(l.slug)
         return p ? [{ ...l, name: p.name, price: priceOf(p, l.ml), image: p.image }] : []
       }),
@@ -103,14 +110,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setLines([])
     setPromo(null)
     return created
-  }, [lines, subtotal, discount, total])
+  }, [validLines, subtotal, discount, total])
 
   const value = useMemo<CartValue>(
     () => ({
-      lines, count, subtotal, discount, total, promo, order,
+      lines, validLines, hasEmptyLines, canCheckout, count, subtotal, discount, total, promo, order,
       add, setQty, remove, applyPromo, clear, placeOrder,
     }),
-    [lines, count, subtotal, discount, total, promo, order, add, setQty, remove, applyPromo, clear, placeOrder],
+    [lines, validLines, hasEmptyLines, canCheckout, count, subtotal, discount, total, promo, order, add, setQty, remove, applyPromo, clear, placeOrder],
   )
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
