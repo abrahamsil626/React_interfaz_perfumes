@@ -1,0 +1,31 @@
+# Secretos y configuración local (contiene la API key de Stitch)
+.mcp.json
+.env
+.env.*
+!.env.example
+*.local
+
+# Referencia externa (voltagent/awesome-design-md) — se descarga, no se versiona
+design-refs/
+
+# Tooling de agentes (skills instaladas localmente)
+.agents/
+.claude/
+skills-lock.json
+
+# Dependencias y builds
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Logs y sistema
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
