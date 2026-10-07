@@ -2,6 +2,8 @@
 
 Interfaz e-commerce de **perfumería de lujo** en React + TypeScript, con una estética austera inspirada en el sistema de diseño de Bugatti: lienzo negro puro, titulares en mayúsculas con mucho espaciado, botones de contorno transparente y fotografía como protagonista.
 
+> **Prueba el proyecto en vivo:** [tienda-perfumes1-frontend.netlify.app](https://tienda-perfumes1-frontend.netlify.app)
+
 ![Home](docs/mockups/01-home.jpg)
 
 ## Cómo se hizo
@@ -18,12 +20,8 @@ Los mockups están en inglés (tal como los generó Stitch); la aplicación impl
 
 | | | |
 |---|---|---|
-| ![Catálogo](docs/mockups/02-catalogo.jpg) **Catálogo** | ![Detalle](docs/mockups/03-detalle-producto.jpg) **Detalle de producto** | ![Buscador](docs/mockups/04-buscador-fragancia.jpg) **Buscador de fragancia** |
-| ![Colecciones](docs/mockups/05-colecciones.jpg) **Colecciones** | ![Promociones](docs/mockups/06-promociones.jpg) **Promociones** | ![Opiniones](docs/mockups/07-opiniones.jpg) **Opiniones** |
-| ![Carrito](docs/mockups/08-carrito.jpg) **Carrito** | ![Checkout](docs/mockups/09-checkout.jpg) **Checkout** | ![Confirmación](docs/mockups/10-confirmacion-pedido.jpg) **Confirmación** |
-| ![Login](docs/mockups/11-login-registro.jpg) **Login y registro** | ![Perfil](docs/mockups/12-perfil.jpg) **Perfil** | ![Favoritos](docs/mockups/13-favoritos.jpg) **Favoritos** |
-| ![Seguimiento](docs/mockups/14-seguimiento-pedido.jpg) **Seguimiento** | ![Contacto](docs/mockups/15-contacto.jpg) **Contacto** | ![FAQ](docs/mockups/16-faq.jpg) **FAQ** |
-| ![Nosotros](docs/mockups/17-nosotros.jpg) **Nosotros** | ![Legales](docs/mockups/18-legales.jpg) **Legales** | |
+| ![Catálogo](docs/mockups/02-catalogo.jpg) **Catálogo** | ![Detalle](docs/mockups/03-detalle-producto.jpg) **Detalle de producto** | ![Colecciones](docs/mockups/05-colecciones.jpg) **Colecciones** |
+| ![Carrito](docs/mockups/08-carrito.jpg) **Carrito** | ![Checkout](docs/mockups/09-checkout.jpg) **Checkout** | ![Login](docs/mockups/11-login-registro.jpg) **Login y registro** |
 
 ## Funcionalidad
 
