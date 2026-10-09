@@ -2,7 +2,7 @@
 
 Interfaz e-commerce de **perfumería de lujo** en React + TypeScript, con una estética austera inspirada en el sistema de diseño de Bugatti: lienzo negro puro, titulares en mayúsculas con mucho espaciado, botones de contorno transparente y fotografía como protagonista.
 
-> **Prueba el proyecto en vivo:** [tienda-perfumes1-frontend.netlify.app](https://tienda-perfumes1-frontend.netlify.app)
+> **Prueba el proyecto en vivo:** [tienda1-perfumes-frontend.netlify.app](https://tienda1-perfumes-frontend.netlify.app)
 
 ![Home](docs/mockups/01-home.jpg)
 
